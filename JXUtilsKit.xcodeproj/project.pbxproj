@@ -20,6 +20,7 @@
 		61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D42430AE2500682B5E /* JXSafeMutableArray.m */; };
 		61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D82430AE5000682B5E /* JXByteConversion.m */; };
 		61A871DB2430AF2200682B5E /* JXUtilsKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 61A871DA2430AF2200682B5E /* JXUtilsKit.podspec */; };
+		61A871DE2430B2C900682B5E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 61A871DD2430B2C900682B5E /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,8 +59,8 @@
 		61636746242B506A009BC274 /* JXUtilsKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXUtilsKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6163674A242B506A009BC274 /* JXUtilsKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXUtilsKitUITests.m; sourceTree = "<group>"; };
 		6163674C242B506A009BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		61A871CF2430AE1D00682B5E /* FoundationMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationMacroHeader.h; sourceTree = "<group>"; };
-		61A871D02430AE1D00682B5E /* UIKitMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitMacroHeader.h; sourceTree = "<group>"; };
+		61A871CF2430AE1D00682B5E /* JXFoundationMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFoundationMacroHeader.h; sourceTree = "<group>"; };
+		61A871D02430AE1D00682B5E /* JXUIKitMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXUIKitMacroHeader.h; sourceTree = "<group>"; };
 		61A871D12430AE2500682B5E /* JXSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableArray.h; sourceTree = "<group>"; };
 		61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSafeMutableDictionary.m; sourceTree = "<group>"; };
 		61A871D32430AE2500682B5E /* JXSafeMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableDictionary.h; sourceTree = "<group>"; };
@@ -68,6 +69,7 @@
 		61A871D82430AE5000682B5E /* JXByteConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXByteConversion.m; sourceTree = "<group>"; };
 		61A871DA2430AF2200682B5E /* JXUtilsKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JXUtilsKit.podspec; sourceTree = "<group>"; };
 		61A871DC2430AF8900682B5E /* JXUtilsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXUtilsKit.h; sourceTree = "<group>"; };
+		61A871DD2430B2C900682B5E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		61636717242B5068009BC274 = {
 			isa = PBXGroup;
 			children = (
+				61A871DD2430B2C900682B5E /* README.md */,
 				61A871DA2430AF2200682B5E /* JXUtilsKit.podspec */,
 				61636722242B5068009BC274 /* JXUtilsKit */,
 				6163673E242B506A009BC274 /* JXUtilsKitTests */,
@@ -170,8 +173,8 @@
 		61A871CA2430AAE100682B5E /* Marco */ = {
 			isa = PBXGroup;
 			children = (
-				61A871CF2430AE1D00682B5E /* FoundationMacroHeader.h */,
-				61A871D02430AE1D00682B5E /* UIKitMacroHeader.h */,
+				61A871CF2430AE1D00682B5E /* JXFoundationMacroHeader.h */,
+				61A871D02430AE1D00682B5E /* JXUIKitMacroHeader.h */,
 			);
 			path = Marco;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			files = (
 				61636733242B506A009BC274 /* LaunchScreen.storyboard in Resources */,
 				61A871DB2430AF2200682B5E /* JXUtilsKit.podspec in Resources */,
+				61A871DE2430B2C900682B5E /* README.md in Resources */,
 				61636730242B506A009BC274 /* Assets.xcassets in Resources */,
 				6163672E242B5068009BC274 /* Main.storyboard in Resources */,
 			);

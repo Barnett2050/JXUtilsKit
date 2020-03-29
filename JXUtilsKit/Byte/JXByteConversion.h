@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  取得一个大于256小于65536数字的高位字节
- 
  */
 + (Byte)jx_getHighByteFromArg:(int)arg;
 
