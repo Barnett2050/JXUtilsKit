@@ -16,6 +16,10 @@
 		61636736242B506A009BC274 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636735242B506A009BC274 /* main.m */; };
 		61636740242B506A009BC274 /* JXUtilsKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163673F242B506A009BC274 /* JXUtilsKitTests.m */; };
 		6163674B242B506A009BC274 /* JXUtilsKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163674A242B506A009BC274 /* JXUtilsKitUITests.m */; };
+		61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */; };
+		61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D42430AE2500682B5E /* JXSafeMutableArray.m */; };
+		61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D82430AE5000682B5E /* JXByteConversion.m */; };
+		61A871DB2430AF2200682B5E /* JXUtilsKit.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 61A871DA2430AF2200682B5E /* JXUtilsKit.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +58,16 @@
 		61636746242B506A009BC274 /* JXUtilsKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXUtilsKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6163674A242B506A009BC274 /* JXUtilsKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXUtilsKitUITests.m; sourceTree = "<group>"; };
 		6163674C242B506A009BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61A871CF2430AE1D00682B5E /* FoundationMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FoundationMacroHeader.h; sourceTree = "<group>"; };
+		61A871D02430AE1D00682B5E /* UIKitMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitMacroHeader.h; sourceTree = "<group>"; };
+		61A871D12430AE2500682B5E /* JXSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableArray.h; sourceTree = "<group>"; };
+		61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSafeMutableDictionary.m; sourceTree = "<group>"; };
+		61A871D32430AE2500682B5E /* JXSafeMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableDictionary.h; sourceTree = "<group>"; };
+		61A871D42430AE2500682B5E /* JXSafeMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSafeMutableArray.m; sourceTree = "<group>"; };
+		61A871D72430AE5000682B5E /* JXByteConversion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXByteConversion.h; sourceTree = "<group>"; };
+		61A871D82430AE5000682B5E /* JXByteConversion.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXByteConversion.m; sourceTree = "<group>"; };
+		61A871DA2430AF2200682B5E /* JXUtilsKit.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JXUtilsKit.podspec; sourceTree = "<group>"; };
+		61A871DC2430AF8900682B5E /* JXUtilsKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXUtilsKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 		61636717242B5068009BC274 = {
 			isa = PBXGroup;
 			children = (
+				61A871DA2430AF2200682B5E /* JXUtilsKit.podspec */,
 				61636722242B5068009BC274 /* JXUtilsKit */,
 				6163673E242B506A009BC274 /* JXUtilsKitTests */,
 				61636749242B506A009BC274 /* JXUtilsKitUITests */,
@@ -104,6 +119,10 @@
 		61636722242B5068009BC274 /* JXUtilsKit */ = {
 			isa = PBXGroup;
 			children = (
+				61A871DC2430AF8900682B5E /* JXUtilsKit.h */,
+				61A871CB2430AAE800682B5E /* Byte */,
+				61A871CA2430AAE100682B5E /* Marco */,
+				61A871C92430A9D600682B5E /* ThreadSafe */,
 				61636723242B5068009BC274 /* AppDelegate.h */,
 				61636724242B5068009BC274 /* AppDelegate.m */,
 				61636726242B5068009BC274 /* SceneDelegate.h */,
@@ -135,6 +154,35 @@
 				6163674C242B506A009BC274 /* Info.plist */,
 			);
 			path = JXUtilsKitUITests;
+			sourceTree = "<group>";
+		};
+		61A871C92430A9D600682B5E /* ThreadSafe */ = {
+			isa = PBXGroup;
+			children = (
+				61A871D12430AE2500682B5E /* JXSafeMutableArray.h */,
+				61A871D42430AE2500682B5E /* JXSafeMutableArray.m */,
+				61A871D32430AE2500682B5E /* JXSafeMutableDictionary.h */,
+				61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */,
+			);
+			path = ThreadSafe;
+			sourceTree = "<group>";
+		};
+		61A871CA2430AAE100682B5E /* Marco */ = {
+			isa = PBXGroup;
+			children = (
+				61A871CF2430AE1D00682B5E /* FoundationMacroHeader.h */,
+				61A871D02430AE1D00682B5E /* UIKitMacroHeader.h */,
+			);
+			path = Marco;
+			sourceTree = "<group>";
+		};
+		61A871CB2430AAE800682B5E /* Byte */ = {
+			isa = PBXGroup;
+			children = (
+				61A871D72430AE5000682B5E /* JXByteConversion.h */,
+				61A871D82430AE5000682B5E /* JXByteConversion.m */,
+			);
+			path = Byte;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				61636733242B506A009BC274 /* LaunchScreen.storyboard in Resources */,
+				61A871DB2430AF2200682B5E /* JXUtilsKit.podspec in Resources */,
 				61636730242B506A009BC274 /* Assets.xcassets in Resources */,
 				6163672E242B5068009BC274 /* Main.storyboard in Resources */,
 			);
@@ -270,7 +319,10 @@
 				6163672B242B5068009BC274 /* ViewController.m in Sources */,
 				61636725242B5068009BC274 /* AppDelegate.m in Sources */,
 				61636736242B506A009BC274 /* main.m in Sources */,
+				61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */,
 				61636728242B5068009BC274 /* SceneDelegate.m in Sources */,
+				61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */,
+				61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
