@@ -18,17 +18,20 @@
   * 将字节转为字符串
   * 将十六进制字符串转为带符号整型
 
-* JXFoundationMacroHeader
+* JXFoundationUtils
   * 弧度角度参数转换
-  * 快速声明
   * 数据验证
-  * 日志打印
-* JXUIKitMacroHeader
+  
+* JXUIKitUtils
   * 设备型号系统版本
   * 视图尺寸相关参数 
   * 颜色相关参数 
   * Application相关参数 
   * 字体设置
+  
+  * JXGlobalMacroHeader
+    * 快速声明
+    * 日志打印
   
 * JXSafeMutableArray
   * 多线程安全数组处理
