@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JXUtilsKit'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '工具类库'
   s.homepage         = 'https://github.com/Barnett2050/JXUtilsKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -12,6 +12,11 @@ Pod::Spec.new do |s|
   
   s.source_files = 'JXUtilsKit/JXUtilsKit.h'
   s.public_header_files = 'JXUtilsKit/JXUtilsKit.h'
+  
+  s.subspec 'Tools' do |ss|
+    ss.source_files = 'JXUtilsKit/Tools/*.{h,m}'
+    ss.public_header_files = 'JXUtilsKit/Tools/*.h'
+  end
   
   s.subspec 'Byte' do |ss|
     ss.source_files = 'JXUtilsKit/Byte/*.{h,m}'

@@ -40,6 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
  将十六进制字符串转为带符号整型
  */
 + (int)jx_hexStringChangeToIntWithHexStr:(NSString *)hexStr;
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,8 +11,10 @@
 
 #import "JXByteConversion.h"
 
-#import "JXFoundationMacroHeader.h"
-#import "JXUIKitMacroHeader.h"
+#import "JXUIKitUtils.h"
+#import "JXFoundationUtils.h"
+
+#import "JXGlobalMacroHeader.h"
 
 #import "JXSafeMutableArray.h"
 #import "JXSafeMutableDictionary.h"
