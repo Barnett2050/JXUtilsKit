@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		61510EB7243EFD0B00E55EB7 /* JXUIKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 61510EB6243EFD0B00E55EB7 /* JXUIKitUtils.m */; };
 		61510EBA243F35CE00E55EB7 /* JXFoundationUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 61510EB9243F35CE00E55EB7 /* JXFoundationUtils.m */; };
+		61510ED12440616D00E55EB7 /* JXParameterTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 61510ED02440616D00E55EB7 /* JXParameterTool.m */; };
+		61510ED72441BC6400E55EB7 /* JXAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 61510ED52441BC6400E55EB7 /* JXAuthorization.m */; };
 		61636725242B5068009BC274 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636724242B5068009BC274 /* AppDelegate.m */; };
 		61636728242B5068009BC274 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636727242B5068009BC274 /* SceneDelegate.m */; };
 		6163672B242B5068009BC274 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163672A242B5068009BC274 /* ViewController.m */; };
@@ -48,6 +50,10 @@
 		61510EB8243F35CE00E55EB7 /* JXFoundationUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXFoundationUtils.h; sourceTree = "<group>"; };
 		61510EB9243F35CE00E55EB7 /* JXFoundationUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXFoundationUtils.m; sourceTree = "<group>"; };
 		61510EBB2440159600E55EB7 /* JXGlobalMacroHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXGlobalMacroHeader.h; sourceTree = "<group>"; };
+		61510ECF2440616D00E55EB7 /* JXParameterTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXParameterTool.h; sourceTree = "<group>"; };
+		61510ED02440616D00E55EB7 /* JXParameterTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXParameterTool.m; sourceTree = "<group>"; };
+		61510ED52441BC6400E55EB7 /* JXAuthorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXAuthorization.m; sourceTree = "<group>"; };
+		61510ED62441BC6400E55EB7 /* JXAuthorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXAuthorization.h; sourceTree = "<group>"; };
 		61636720242B5068009BC274 /* JXUtilsKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXUtilsKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61636723242B5068009BC274 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61636724242B5068009BC274 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -105,10 +111,14 @@
 		61510EB4243EF75800E55EB7 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				61510ED62441BC6400E55EB7 /* JXAuthorization.h */,
+				61510ED52441BC6400E55EB7 /* JXAuthorization.m */,
 				61510EB5243EFD0B00E55EB7 /* JXUIKitUtils.h */,
 				61510EB6243EFD0B00E55EB7 /* JXUIKitUtils.m */,
 				61510EB8243F35CE00E55EB7 /* JXFoundationUtils.h */,
 				61510EB9243F35CE00E55EB7 /* JXFoundationUtils.m */,
+				61510ECF2440616D00E55EB7 /* JXParameterTool.h */,
+				61510ED02440616D00E55EB7 /* JXParameterTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -341,7 +351,9 @@
 				61510EB7243EFD0B00E55EB7 /* JXUIKitUtils.m in Sources */,
 				61636736242B506A009BC274 /* main.m in Sources */,
 				61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */,
+				61510ED12440616D00E55EB7 /* JXParameterTool.m in Sources */,
 				61636728242B5068009BC274 /* SceneDelegate.m in Sources */,
+				61510ED72441BC6400E55EB7 /* JXAuthorization.m in Sources */,
 				61510EBA243F35CE00E55EB7 /* JXFoundationUtils.m in Sources */,
 				61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */,
 				61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */,
