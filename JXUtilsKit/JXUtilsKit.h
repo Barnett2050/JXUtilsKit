@@ -13,6 +13,8 @@
 
 #import "JXUIKitUtils.h"
 #import "JXFoundationUtils.h"
+#import "JXParameterTool.h"
+#import "JXAuthorization.h"
 
 #import "JXGlobalMacroHeader.h"
 
