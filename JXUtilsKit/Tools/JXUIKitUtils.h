@@ -24,10 +24,10 @@ bool system_version_lessThan(NSString *version);
 bool system_version_moreThan(NSString *version);
 
 /// 输入版本是否大于等于当前iOS设备版本
-bool system_version_moreThan_equal(NSString *version);
+bool system_version_moreThanOrEqual(NSString *version);
 
 /// 输入版本是否小于等于当前iOS设备版本
-bool system_version_lessThan_equal(NSString *version);
+bool system_version_lessThanOrEqual(NSString *version);
 
 bool is_iPhoneX(void);
 
@@ -53,14 +53,14 @@ float screenWidth_scale(void);
 float screenHeight_scale(void);
 
 /// 根据宽度比例向上取整
-float ceil_width(float width);
+float ceil_widthScale(float width);
 /// 根据高度比例向上取整
-float ceil_height(float height);
+float ceil_heightScale(float height);
 
 /// 根据宽度比例向下取整
-float floor_width(float width);
+float floor_widthScale(float width);
 /// 根据高度比例向下取整
-float floor_height(float height);
+float floor_heightScale(float height);
 
 #pragma mark - 颜色相关参数设置
 
@@ -82,7 +82,7 @@ NSUserDefaults* kUserDefaults(void);
 NSNotificationCenter* kNotificationCenter(void);
 
 #pragma mark - UI设置方法
-void kViewBorderRadius(UIView *view,float radius,float width,UIColor *color);
+void kViewBorderRadius(UIView *view,float radius,float borderWidth,UIColor *borderColor);
 
 #pragma mark - 字体相关设置
 UIFont* system_font(float value);
@@ -94,9 +94,7 @@ UIFont* boldSystem_scaleFont(float value);
 UIFont* fontName_size(NSString *fontName,float size);
 UIFont* fontName_scaleSize(NSString *fontName,float size);
 
-
 #pragma mark - 快速生成对象
-
 /// 图片
 UIImage* image_named(NSString *name);
 /// 随机数

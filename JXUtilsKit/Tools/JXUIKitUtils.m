@@ -25,12 +25,12 @@ bool system_version_moreThan(NSString *version)
     return jxSystem_Version_Comparison(version) == NSOrderedDescending;
 }
 
-bool system_version_moreThan_equal(NSString *version)
+bool system_version_moreThanOrEqual(NSString *version)
 {
     return jxSystem_Version_Comparison(version) != NSOrderedAscending;
 }
 
-bool system_version_lessThan_equal(NSString *version)
+bool system_version_lessThanOrEqual(NSString *version)
 {
     return jxSystem_Version_Comparison(version) != NSOrderedDescending;
 }
@@ -38,7 +38,11 @@ bool system_version_lessThan_equal(NSString *version)
 bool is_iPhoneX(void)
 {
 //    return (KScreen_Width() > KScreen_Height() ? (KScreen_Width() == 896 || KScreen_Width() == 812):(KScreen_Height() == 896 || KScreen_Height() == 812));
-    return (system_version_moreThan_equal(@"11.0") && [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0);
+    bool flag = NO;
+    if (@available(iOS 11.0,*)) {
+        flag = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0;
+    }
+    return flag;
 }
 
 bool is_iPhone5(void)
@@ -66,7 +70,11 @@ float statusBar_height(void)
 }
 float bottomSafeArea_height(void)
 {
-    return (is_iPhoneX() ? [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom:0);
+    CGFloat height = 0;
+    if (@available(iOS 11.0, *)) {
+        height = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom;
+    }
+    return height;
 }
 float tabBar_height(void)
 {
@@ -80,20 +88,20 @@ float screenHeight_scale(void)
 {
     return screen_height()/667.0;
 }
-float ceil_width(float width)
+float ceil_widthScale(float width)
 {
     return ceil(width*screenWidth_scale());
 }
-float ceil_height(float height)
+float ceil_heightScale(float height)
 {
     return ceil(height*screenHeight_scale());
 }
 
-float floor_width(float width)
+float floor_widthScale(float width)
 {
     return floor(width*screenWidth_scale());
 }
-float floor_height(float height)
+float floor_heightScale(float height)
 {
     return floor(height*screenHeight_scale());
 }
@@ -140,12 +148,12 @@ NSNotificationCenter* kNotificationCenter(void)
     return [NSNotificationCenter defaultCenter];
 }
 
-void kViewBorderRadius(UIView *view,float radius,float width,UIColor *color)
+void kViewBorderRadius(UIView *view,float radius,float borderWidth,UIColor *borderColor)
 {
     [view.layer setCornerRadius:(radius)];
     [view.layer setMasksToBounds:true];
-    [view.layer setBorderWidth:(width)];
-    [view.layer setBorderColor:[color CGColor]];
+    [view.layer setBorderWidth:(borderWidth)];
+    [view.layer setBorderColor:[borderColor CGColor]];
 }
 
 UIFont* system_font(float value)

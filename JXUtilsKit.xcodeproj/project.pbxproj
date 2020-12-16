@@ -12,7 +12,6 @@
 		61510ED12440616D00E55EB7 /* JXParameterTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 61510ED02440616D00E55EB7 /* JXParameterTool.m */; };
 		61510ED72441BC6400E55EB7 /* JXAuthorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 61510ED52441BC6400E55EB7 /* JXAuthorization.m */; };
 		61636725242B5068009BC274 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636724242B5068009BC274 /* AppDelegate.m */; };
-		61636728242B5068009BC274 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636727242B5068009BC274 /* SceneDelegate.m */; };
 		6163672B242B5068009BC274 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163672A242B5068009BC274 /* ViewController.m */; };
 		6163672E242B5068009BC274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6163672C242B5068009BC274 /* Main.storyboard */; };
 		61636730242B506A009BC274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6163672F242B506A009BC274 /* Assets.xcassets */; };
@@ -57,8 +56,6 @@
 		61636720242B5068009BC274 /* JXUtilsKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JXUtilsKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61636723242B5068009BC274 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		61636724242B5068009BC274 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		61636726242B5068009BC274 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		61636727242B5068009BC274 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		61636729242B5068009BC274 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6163672A242B5068009BC274 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6163672D242B5068009BC274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,8 +152,6 @@
 				61A871C92430A9D600682B5E /* ThreadSafe */,
 				61636723242B5068009BC274 /* AppDelegate.h */,
 				61636724242B5068009BC274 /* AppDelegate.m */,
-				61636726242B5068009BC274 /* SceneDelegate.h */,
-				61636727242B5068009BC274 /* SceneDelegate.m */,
 				61636729242B5068009BC274 /* ViewController.h */,
 				6163672A242B5068009BC274 /* ViewController.m */,
 				6163672C242B5068009BC274 /* Main.storyboard */,
@@ -276,7 +271,7 @@
 		61636718242B5068009BC274 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = Barnett;
 				TargetAttributes = {
 					6163671F242B5068009BC274 = {
@@ -352,7 +347,6 @@
 				61636736242B506A009BC274 /* main.m in Sources */,
 				61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */,
 				61510ED12440616D00E55EB7 /* JXParameterTool.m in Sources */,
-				61636728242B5068009BC274 /* SceneDelegate.m in Sources */,
 				61510ED72441BC6400E55EB7 /* JXAuthorization.m in Sources */,
 				61510EBA243F35CE00E55EB7 /* JXFoundationUtils.m in Sources */,
 				61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */,
@@ -437,6 +431,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -495,6 +490,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -528,13 +524,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ACE2C9PJG;
 				INFOPLIST_FILE = JXUtilsKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qwbcg.JXUtilsKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -545,13 +542,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9ACE2C9PJG;
 				INFOPLIST_FILE = JXUtilsKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qwbcg.JXUtilsKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

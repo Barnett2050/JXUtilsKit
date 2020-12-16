@@ -77,8 +77,7 @@ static JXAuthorization *sharedSingleton = nil;
     dispatch_async(dispatch_get_main_queue(), ^{
         if (@available(iOS 10.0,*)) {
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:nil];
-        }else
-        {
+        }else{
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
         }
     });

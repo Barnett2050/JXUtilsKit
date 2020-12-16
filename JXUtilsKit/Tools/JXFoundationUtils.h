@@ -27,7 +27,7 @@ bool string_valid(NSString *value);
 
 NSString* string_safe(NSString *value);
 
-bool string_have(NSString *value,NSString* key);
+bool string_have(NSString *value,NSString *key);
 
 bool dictionary_valid(NSDictionary *value);
 

@@ -30,7 +30,7 @@ NSString* string_safe(NSString *value)
     return (string_valid(value) ? value : @"");
 }
 
-bool string_have(NSString *value,NSString* key)
+bool string_have(NSString *value,NSString *key)
 {
     bool flag = string_valid(value);
     if (flag) {
