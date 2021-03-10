@@ -14,19 +14,19 @@ NS_ASSUME_NONNULL_BEGIN
 @interface JXUIKitUtils : NSObject
 
 #pragma mark - 设备型号系统版本判定
-/// 输入版本是否等于当前iOS设备版本
+/// 输入版本等于当前iOS设备版本 14.4
 bool system_version_equal(NSString *version);
 
-/// 输入版本是否小于当前iOS设备版本
+/// 输入版本大于当前iOS设备版本
 bool system_version_lessThan(NSString *version);
 
-/// 输入版本是否大于当前iOS设备版本
+/// 输入版本小于当前iOS设备版本
 bool system_version_moreThan(NSString *version);
 
-/// 输入版本是否大于等于当前iOS设备版本
+/// 输入版本大于等于当前iOS设备版本
 bool system_version_moreThanOrEqual(NSString *version);
 
-/// 输入版本是否小于等于当前iOS设备版本
+/// 输入版本小于等于当前iOS设备版本
 bool system_version_lessThanOrEqual(NSString *version);
 
 bool is_iPhoneX(void);

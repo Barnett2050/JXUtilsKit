@@ -33,8 +33,7 @@ static JXAuthorization *sharedSingleton = nil;
 {
     static dispatch_once_t token;
     dispatch_once(&token, ^{
-        if(sharedSingleton == nil)
-        {
+        if(sharedSingleton == nil) {
             sharedSingleton = [super allocWithZone:zone];
         }
     });
@@ -75,11 +74,7 @@ static JXAuthorization *sharedSingleton = nil;
 + (void)gotoApplicationSettings
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        if (@available(iOS 10.0,*)) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:nil];
-        }else{
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-        }
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:nil];
     });
 }
 
@@ -103,8 +98,7 @@ static JXAuthorization *sharedSingleton = nil;
                 if (successBlock) {
                     successBlock();
                 }
-            }else
-            {
+            }else {
                 if (failBlock) {
                     failBlock(AuthorizationFailTypeFirstNoneAuthorization,nil);
                 }
@@ -138,15 +132,13 @@ static JXAuthorization *sharedSingleton = nil;
                 if (successBlock) {
                     successBlock();
                 }
-            }else
-            {
+            } else {
                 if (failBlock) {
                     failBlock(AuthorizationFailTypeFirstNoneAuthorization,nil);
                 }
             }
         }];
-    }else
-    {
+    } else {
         [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
     }
 }
@@ -161,8 +153,7 @@ static JXAuthorization *sharedSingleton = nil;
         [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
             [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
         }];
-    }else
-    {
+    } else {
         [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
     }
 }
@@ -180,15 +171,13 @@ static JXAuthorization *sharedSingleton = nil;
                 if (successBlock) {
                     successBlock();
                 }
-            }else
-            {
+            } else {
                 if (failBlock) {
                     failBlock(AuthorizationFailTypeFirstNoneAuthorization,error);
                 }
             }
         }];
-    }else
-    {
+    } else {
         [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
     }
 }
@@ -216,35 +205,29 @@ static JXAuthorization *sharedSingleton = nil;
                 if (successBlock) {
                     successBlock();
                 }
-            }else
-            {
+            } else {
                 if (failBlock) {
                     failBlock(AuthorizationFailTypeFirstNoneAuthorization,error);
                 }
             }
         }];
-    }else
-    {
+    } else {
         [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
     }
 }
 + (void)jx_requestMediaAuthorizationSuccess:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock
 {
-    
     // 请求媒体资料库权限
-    if (@available(iOS 9.3,*)) {
-        if (![JXAuthorization infoPlistIsContain:appleMusicKey]) {
-            return;
-        }
-        MPMediaLibraryAuthorizationStatus status = [MPMediaLibrary authorizationStatus];
-        if (status == MPMediaLibraryAuthorizationStatusNotDetermined) {
-            [MPMediaLibrary requestAuthorization:^(MPMediaLibraryAuthorizationStatus status) {
-                [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
-            }];
-        }else
-        {
+    if (![JXAuthorization infoPlistIsContain:appleMusicKey]) {
+        return;
+    }
+    MPMediaLibraryAuthorizationStatus status = [MPMediaLibrary authorizationStatus];
+    if (status == MPMediaLibraryAuthorizationStatusNotDetermined) {
+        [MPMediaLibrary requestAuthorization:^(MPMediaLibraryAuthorizationStatus status) {
             [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
-        }
+        }];
+    } else {
+        [JXAuthorization jx_requestAuthorizationWith:status success:successBlock fail:failBlock];
     }
 }
 
@@ -273,7 +256,6 @@ static JXAuthorization *sharedSingleton = nil;
             }
         }
             break;
-            
         default:
             break;
     }
@@ -310,11 +292,9 @@ static JXAuthorization *sharedSingleton = nil;
         
         if (confirmStr != nil) {
             [alertController addAction:[UIAlertAction actionWithTitle:confirmStr style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                
                 if (confirm) {
                     confirm();
                 }
-                
             }]];
         }
         if (cancleStr != nil) {
@@ -342,23 +322,17 @@ static JXAuthorization *sharedSingleton = nil;
         NSString *message;
         if ([content isEqualToString:cameraUsageKey]) {
             message = @"info.plist文件缺少相机权限相关描述";
-        }else if ([content isEqualToString:audioUsageKey])
-        {
+        }else if ([content isEqualToString:audioUsageKey]) {
             message = @"info.plist文件缺少麦克风权限相关描述";
-        }else if ([content isEqualToString:photoLibraryKey])
-        {
+        }else if ([content isEqualToString:photoLibraryKey]) {
             message = @"info.plist文件缺少相册权限相关描述";
-        }else if ([content isEqualToString:contactsKey])
-        {
+        }else if ([content isEqualToString:contactsKey]) {
             message = @"info.plist文件缺少通讯录权限相关描述";
-        }else if ([content isEqualToString:calendarsKey])
-        {
+        }else if ([content isEqualToString:calendarsKey]) {
             message = @"info.plist文件缺少日历权限相关描述";
-        }else if ([content isEqualToString:remindersKey])
-        {
+        }else if ([content isEqualToString:remindersKey]) {
             message = @"info.plist文件缺少提醒权限相关描述";
-        }else if ([content isEqualToString:appleMusicKey])
-        {
+        }else if ([content isEqualToString:appleMusicKey]) {
             message = @"info.plist文件缺少音乐媒体权限相关描述";
         }
         [JXAuthorization showAlertWithTitle:nil message:message confirm:@"确定" cancle:nil confirmBlock:nil cancleBlock:nil];

@@ -19,6 +19,11 @@
 		61636736242B506A009BC274 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636735242B506A009BC274 /* main.m */; };
 		61636740242B506A009BC274 /* JXUtilsKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163673F242B506A009BC274 /* JXUtilsKitTests.m */; };
 		6163674B242B506A009BC274 /* JXUtilsKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163674A242B506A009BC274 /* JXUtilsKitUITests.m */; };
+		61878E8425F78A5200C0E1CC /* AuthorizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878E8325F78A5200C0E1CC /* AuthorizationTests.m */; };
+		61878E9B25F7904C00C0E1CC /* UIKitUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878E9A25F7904C00C0E1CC /* UIKitUtilsTests.m */; };
+		61878EA325F8676A00C0E1CC /* FoundationUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878EA225F8676A00C0E1CC /* FoundationUtilsTests.m */; };
+		61878EA825F86B2D00C0E1CC /* ParameterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878EA725F86B2D00C0E1CC /* ParameterTests.m */; };
+		61878EAE25F86D1F00C0E1CC /* ThreadSafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878EAD25F86D1F00C0E1CC /* ThreadSafeTests.m */; };
 		61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */; };
 		61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D42430AE2500682B5E /* JXSafeMutableArray.m */; };
 		61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D82430AE5000682B5E /* JXByteConversion.m */; };
@@ -69,6 +74,11 @@
 		61636746242B506A009BC274 /* JXUtilsKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXUtilsKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6163674A242B506A009BC274 /* JXUtilsKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXUtilsKitUITests.m; sourceTree = "<group>"; };
 		6163674C242B506A009BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61878E8325F78A5200C0E1CC /* AuthorizationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationTests.m; sourceTree = "<group>"; };
+		61878E9A25F7904C00C0E1CC /* UIKitUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIKitUtilsTests.m; sourceTree = "<group>"; };
+		61878EA225F8676A00C0E1CC /* FoundationUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundationUtilsTests.m; sourceTree = "<group>"; };
+		61878EA725F86B2D00C0E1CC /* ParameterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParameterTests.m; sourceTree = "<group>"; };
+		61878EAD25F86D1F00C0E1CC /* ThreadSafeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadSafeTests.m; sourceTree = "<group>"; };
 		61A871D12430AE2500682B5E /* JXSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableArray.h; sourceTree = "<group>"; };
 		61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSafeMutableDictionary.m; sourceTree = "<group>"; };
 		61A871D32430AE2500682B5E /* JXSafeMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableDictionary.h; sourceTree = "<group>"; };
@@ -166,6 +176,8 @@
 		6163673E242B506A009BC274 /* JXUtilsKitTests */ = {
 			isa = PBXGroup;
 			children = (
+				61878EAC25F86D0500C0E1CC /* ThreadSafe */,
+				61878E8225F78A2E00C0E1CC /* Tools */,
 				6163673F242B506A009BC274 /* JXUtilsKitTests.m */,
 				61636741242B506A009BC274 /* Info.plist */,
 			);
@@ -179,6 +191,25 @@
 				6163674C242B506A009BC274 /* Info.plist */,
 			);
 			path = JXUtilsKitUITests;
+			sourceTree = "<group>";
+		};
+		61878E8225F78A2E00C0E1CC /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				61878E8325F78A5200C0E1CC /* AuthorizationTests.m */,
+				61878E9A25F7904C00C0E1CC /* UIKitUtilsTests.m */,
+				61878EA225F8676A00C0E1CC /* FoundationUtilsTests.m */,
+				61878EA725F86B2D00C0E1CC /* ParameterTests.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		61878EAC25F86D0500C0E1CC /* ThreadSafe */ = {
+			isa = PBXGroup;
+			children = (
+				61878EAD25F86D1F00C0E1CC /* ThreadSafeTests.m */,
+			);
+			path = ThreadSafe;
 			sourceTree = "<group>";
 		};
 		61A871C92430A9D600682B5E /* ThreadSafe */ = {
@@ -358,7 +389,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61878EAE25F86D1F00C0E1CC /* ThreadSafeTests.m in Sources */,
+				61878EA825F86B2D00C0E1CC /* ParameterTests.m in Sources */,
+				61878EA325F8676A00C0E1CC /* FoundationUtilsTests.m in Sources */,
+				61878E9B25F7904C00C0E1CC /* UIKitUtilsTests.m in Sources */,
 				61636740242B506A009BC274 /* JXUtilsKitTests.m in Sources */,
+				61878E8425F78A5200C0E1CC /* AuthorizationTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,9 +558,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ACE2C9PJG;
+				DEVELOPMENT_TEAM = E8RV92MFCF;
 				INFOPLIST_FILE = JXUtilsKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -540,9 +576,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ACE2C9PJG;
+				DEVELOPMENT_TEAM = E8RV92MFCF;
 				INFOPLIST_FILE = JXUtilsKit/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -558,7 +594,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ACE2C9PJG;
+				DEVELOPMENT_TEAM = E8RV92MFCF;
 				INFOPLIST_FILE = JXUtilsKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -578,7 +614,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ACE2C9PJG;
+				DEVELOPMENT_TEAM = E8RV92MFCF;
 				INFOPLIST_FILE = JXUtilsKitTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -596,8 +632,8 @@
 		61636756242B506A009BC274 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ACE2C9PJG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JXUtilsKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,6 +642,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qwbcg.JXUtilsKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = JXUtilsKit;
 			};
@@ -614,8 +652,8 @@
 		61636757242B506A009BC274 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ACE2C9PJG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JXUtilsKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -624,6 +662,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.qwbcg.JXUtilsKitUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = JXUtilsKit;
 			};

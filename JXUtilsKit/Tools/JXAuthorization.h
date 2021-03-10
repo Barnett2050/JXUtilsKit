@@ -37,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取麦克风权限
 + (void)jx_requestAudioAuthorizationSuccess:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock;
 
-/// 获取相册权限 iOS 8.0之后
+/// 获取相册权限 
 + (void)jx_requestPhotoLibrayAuthorizationSuccess:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock;
 
 /// 获取日历事件权限

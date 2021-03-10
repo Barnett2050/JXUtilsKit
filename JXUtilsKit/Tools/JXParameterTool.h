@@ -16,12 +16,6 @@ NS_ASSUME_NONNULL_BEGIN
 // 参数获取工具，需要使用到单例
 @interface JXParameterTool : NSObject
 
-/**
- 单例
- */
-+ (instancetype)sharedSingleInstance;
-
-
 /// 获取电池状态和电量
 /// @param batteryStateBlock 状态回调
 /// @param batteryLevelBlock 电量回调

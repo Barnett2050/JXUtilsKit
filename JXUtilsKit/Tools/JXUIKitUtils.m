@@ -38,10 +38,7 @@ bool system_version_lessThanOrEqual(NSString *version)
 bool is_iPhoneX(void)
 {
 //    return (KScreen_Width() > KScreen_Height() ? (KScreen_Width() == 896 || KScreen_Width() == 812):(KScreen_Height() == 896 || KScreen_Height() == 812));
-    bool flag = NO;
-    if (@available(iOS 11.0,*)) {
-        flag = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0;
-    }
+    bool flag = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom > 0;
     return flag;
 }
 
@@ -70,10 +67,7 @@ float statusBar_height(void)
 }
 float bottomSafeArea_height(void)
 {
-    CGFloat height = 0;
-    if (@available(iOS 11.0, *)) {
-        height = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom;
-    }
+    CGFloat height = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.bottom;
     return height;
 }
 float tabBar_height(void)
