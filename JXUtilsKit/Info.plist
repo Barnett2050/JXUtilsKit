@@ -39,5 +39,23 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>使用相机权限</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>使用相册读写权限</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>使用相册写入权限</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>使用麦克风权限</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>使用音乐媒体权限</string>
+	<key>NSContactsUsageDescription</key>
+	<string>使用通讯录权限</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>使用日历权限</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>使用提醒事项权限</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>使用语音识别权限</string>
 </dict>
 </plist>
