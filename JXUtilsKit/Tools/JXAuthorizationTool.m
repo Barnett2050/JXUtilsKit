@@ -16,8 +16,6 @@
 #import <Speech/Speech.h>
 
 static NSString *kCameraUsageKey = @"NSCameraUsageDescription"; // 相机权限key
-static NSString *kPhotoLibraryKey = @"NSPhotoLibraryUsageDescription"; // 相册读写权限key
-static NSString *kPhotoLibraryKeyAddOnly = @"NSPhotoLibraryAddUsageDescription"; // 相册只写入权限key
 static NSString *kAudioUsageKey = @"NSMicrophoneUsageDescription"; // 麦克风权限key
 static NSString *kAppleMusicKey = @"NSAppleMusicUsageDescription"; // 音乐媒体权限key
 static NSString *kContactsKey = @"NSContactsUsageDescription"; // 通讯录权限key
@@ -30,8 +28,6 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
 @end
 
 @implementation JXAuthorizationTool
-
-
 
 + (void)pushToApplicationSettings
 {
@@ -56,16 +52,6 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
     switch (requestType) {
         case JXAuthorizationRequestCamera:
             [self requestCameraAuthorizationSuccess:success fail:fail];
-            break;
-        case JXAuthorizationRequestPhotoLibraryAddOnly:
-            if (@available(iOS 14.0,*)) {
-                [self requestPhotoLibrayAddOnlyAuthorizationSuccess:success fail:fail];
-            } else {
-                [self requestPhotoLibrayReadWriteAuthorizationSuccess:success fail:fail];
-            }
-            break;
-        case JXAuthorizationRequestPhotoLibraryReadWrite:
-            [self requestPhotoLibrayReadWriteAuthorizationSuccess:success fail:fail];
             break;
         case JXAuthorizationRequestAudio:
             [self requestAudioAuthorizationSuccess:success fail:fail];
@@ -97,7 +83,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
             if (granted) {
                 if (successBlock) {
-                    successBlock(JXAuthorizationStatusAuthorized);
+                    successBlock();
                 }
             }else {
                 if (failBlock) {
@@ -111,41 +97,6 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
     }
 }
 
-+ (void)requestPhotoLibrayAddOnlyAuthorizationSuccess:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock API_AVAILABLE(macosx(11.0), ios(14), tvos(14))
-{
-    PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatusForAccessLevel:PHAccessLevelAddOnly];
-    if (status == PHAuthorizationStatusNotDetermined) {
-        [PHPhotoLibrary requestAuthorizationForAccessLevel:PHAccessLevelAddOnly handler:^(PHAuthorizationStatus status) {
-            [self requestAuthorizationResultWith:status success:successBlock fail:failBlock];
-        }];
-        
-    } else {
-        [self requestAuthorizationResultWith:status success:successBlock fail:failBlock];
-    }
-}
-+ (void)requestPhotoLibrayReadWriteAuthorizationSuccess:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock
-{
-    if (@available(iOS 14.0,*)) {
-        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatusForAccessLevel:PHAccessLevelReadWrite];
-        if (status == PHAuthorizationStatusNotDetermined) {
-            [PHPhotoLibrary requestAuthorizationForAccessLevel:PHAccessLevelReadWrite handler:^(PHAuthorizationStatus status) {
-                [self requestAuthorizationResultWith:status success:successBlock fail:failBlock];
-            }];
-        } else {
-            [self requestAuthorizationResultWith:status success:successBlock fail:failBlock];
-        }
-    } else {
-        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
-        if (status == PHAuthorizationStatusNotDetermined) {
-            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                [self requestAuthorizationResultWith:status success:successBlock fail:failBlock];
-            }];
-        } else {
-            [self requestAuthorizationResultWith:status success:successBlock fail:failBlock];
-        }
-    }
-}
-
 + (void)requestAudioAuthorizationSuccess:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock
 {
     AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
@@ -153,7 +104,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
         [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
             if (granted) {
                 if (successBlock) {
-                    successBlock(JXAuthorizationStatusAuthorized);
+                    successBlock();
                 }
             } else {
                 if (failBlock) {
@@ -179,7 +130,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
                     if (failBlock) { failBlock(JXAuthorizationStatusRestricted,nil); }
                     break;
                 case 3:
-                    if (successBlock) { successBlock(JXAuthorizationStatusAuthorized); }
+                    if (successBlock) { successBlock(); }
                     break;
                 default:
                     break;
@@ -194,7 +145,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
                 if (failBlock) { failBlock(JXAuthorizationStatusRestricted,nil); }
                 break;
             case 3:
-                if (successBlock) { successBlock(JXAuthorizationStatusAuthorized); }
+                if (successBlock) { successBlock(); }
                 break;
             default:
                 break;
@@ -210,7 +161,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
         [contactStore requestAccessForEntityType:CNEntityTypeContacts completionHandler:^(BOOL granted, NSError * _Nullable error) {
             if (granted) {
                 if (successBlock) {
-                    successBlock(JXAuthorizationStatusAuthorized);
+                    successBlock();
                 }
             } else {
                 if (failBlock) {
@@ -231,7 +182,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
         [eventStore requestAccessToEntityType:type completion:^(BOOL granted, NSError * _Nullable error) {
             if (granted) {
                 if (successBlock) {
-                    successBlock(JXAuthorizationStatusAuthorized);
+                    successBlock();
                 }
             } else {
                 if (failBlock) {
@@ -256,7 +207,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
                     if (failBlock) { failBlock(JXAuthorizationStatusRestricted,nil); }
                     break;
                 case 3:
-                    if (successBlock) { successBlock(JXAuthorizationStatusAuthorized); }
+                    if (successBlock) { successBlock(); }
                     break;
                 default:
                     break;
@@ -271,7 +222,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
                 if (failBlock) { failBlock(JXAuthorizationStatusRestricted,nil); }
                 break;
             case 3:
-                if (successBlock) { successBlock(JXAuthorizationStatusAuthorized); }
+                if (successBlock) { successBlock(); }
                 break;
             default:
                 break;
@@ -279,28 +230,7 @@ static NSString *kSpeechRecognitionKey = @"NSSpeechRecognitionUsageDescription";
     }
 }
 
-#pragma mark - private
-+ (void)requestAuthorizationResultWith:(NSInteger)status success:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock
-{
-    switch (status) {
-        case 1:
-            if (failBlock) { failBlock(JXAuthorizationStatusRestricted,nil); }
-            break;
-        case 2:
-            if (failBlock) { failBlock(JXAuthorizationStatusDenied,nil); }
-            break;
-        case 3:
-            if (successBlock) { successBlock(JXAuthorizationStatusAuthorized); }
-            break;
-        case 4:
-            if (@available(iOS 14.0,*)) {
-                if (successBlock) { successBlock(JXAuthorizationStatusLimited); }
-            }
-            break;
-        default:
-            break;
-    }
-}
+#pragma mark - init
 
 static JXAuthorizationTool *sharedSingleton = nil;
 + (id)allocWithZone:(struct _NSZone *)zone
@@ -339,6 +269,24 @@ static JXAuthorizationTool *sharedSingleton = nil;
     return self;
 }
 
+#pragma mark - private
++ (void)requestAuthorizationResultWith:(NSInteger)status success:(requestAuthorizationSuccess)successBlock fail:(requestAuthorizationFail)failBlock
+{
+    switch (status) {
+        case 1:
+            if (failBlock) { failBlock(JXAuthorizationStatusRestricted,nil); }
+            break;
+        case 2:
+            if (failBlock) { failBlock(JXAuthorizationStatusDenied,nil); }
+            break;
+        case 3:
+            if (successBlock) { successBlock(); }
+            break;
+        default:
+            break;
+    }
+}
+
 + (BOOL)infoPlistContainWith:(JXAuthorizationRequestType)requestType
 {
     NSString *content;
@@ -347,14 +295,6 @@ static JXAuthorizationTool *sharedSingleton = nil;
         case JXAuthorizationRequestCamera:
             content = kCameraUsageKey;
             message = @"info.plist文件缺少相机权限相关描述";
-            break;
-        case JXAuthorizationRequestPhotoLibraryAddOnly:
-            content = kPhotoLibraryKeyAddOnly;
-            message = @"info.plist文件缺少相册写入权限相关描述";
-            break;
-        case JXAuthorizationRequestPhotoLibraryReadWrite:
-            content = kPhotoLibraryKey;
-            message = @"info.plist文件缺少相册读写权限相关描述";
             break;
         case JXAuthorizationRequestAudio:
             content = kAudioUsageKey;
@@ -439,6 +379,5 @@ static JXAuthorizationTool *sharedSingleton = nil;
         }
     }
 }
-
 
 @end

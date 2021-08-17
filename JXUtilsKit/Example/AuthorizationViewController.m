@@ -8,6 +8,8 @@
 
 #import "AuthorizationViewController.h"
 #import "JXAuthorizationTool.h"
+#import "JXGPSManager.h"
+#import "JXPhotoManager.h"
 
 @interface AuthorizationViewController ()
 <UITableViewDelegate,UITableViewDataSource>
@@ -31,7 +33,10 @@
                      @"通讯录权限",
                      @"日历权限",
                      @"提醒事项权限",
-                     @"语音识别"];
+                     @"语音识别",
+                     @"请求使用期间定位",
+                     @"请求长期定位",
+                     @"临时一次精准定位"];
     [self.view addSubview:self.tableView];
 }
 
@@ -53,85 +58,115 @@
     switch (indexPath.row) {
         case 0:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestCamera success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestCamera success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
             }];
+            
         }
             break;
         case 1:
         {
-            if (@available(iOS 14, *)) {
-                [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestPhotoLibraryAddOnly success:^(JXAuthorizationSuccessType successType) {
-                    
-                } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
-                    
-                }];
-            } else {
-            }
+            [JXPhotoManager requestAuthorizationType:JXPhotoManagerRequest_AddOnly completion:^(JXPhotoManagerAuthorizationStatus status) {
+                            
+            }];
         }
             break;
         case 2:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestPhotoLibraryReadWrite success:^(JXAuthorizationSuccessType successType) {
-                
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
-                
+            [JXPhotoManager requestAuthorizationType:JXPhotoManagerRequest_ReadWrite completion:^(JXPhotoManagerAuthorizationStatus status) {
+                            
             }];
         }
             break;
         case 3:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestAudio success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestAudio success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
             }];
         }
             break;
         case 4:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestMediaLibrary success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestMediaLibrary success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
             }];
         }
             break;
         case 5:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestContacts success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestContacts success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
             }];
         }
             break;
         case 6:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestCalendars success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestCalendars success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
             }];
         }
             break;
         case 7:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestReminder success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestReminder success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
             }];
         }
             break;
         case 8:
         {
-            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestSpeechRecognition success:^(JXAuthorizationSuccessType successType) {
+            [JXAuthorizationTool requestAuthorizationType:JXAuthorizationRequestSpeechRecognition success:^(void) {
                 
-            } fail:^(JXAuthorizationFailType failType, NSError * _Nullable error) {
+            } fail:^(JXAuthorizationFailStatus failType, NSError * _Nullable error) {
                 
+            }];
+        }
+            break;
+        case 9:
+        {
+            [[JXGPSManager sharedInstance] requestLocationServicesWith:JXGPSManagerRequestWhenInUse success:^{
+                [[JXGPSManager sharedInstance] updateLocations:^(CLLocationManager * _Nonnull locationManager, NSArray<CLLocation *> * _Nonnull locations) {
+                    
+                } failError:^(CLLocationManager * _Nonnull locationManager, NSError * _Nonnull error) {
+                    
+                }];
+            } fail:^(JXGPSManagerAuthorizationStatus status) {
+                
+            }];
+        }
+            break;
+        case 10:
+        {
+            [[JXGPSManager sharedInstance] requestLocationServicesWith:JXGPSManagerRequestAlways success:^{
+                [[JXGPSManager sharedInstance] updateLocations:^(CLLocationManager * _Nonnull locationManager, NSArray<CLLocation *> * _Nonnull locations) {
+                    
+                } failError:^(CLLocationManager * _Nonnull locationManager, NSError * _Nonnull error) {
+                    
+                }];
+            } fail:^(JXGPSManagerAuthorizationStatus status) {
+                
+            }];
+        }
+            break;
+        case 11:
+        {
+            [[JXGPSManager sharedInstance] requestLocationServicesWith:JXGPSManagerRequestWhenInUse success:^{
+                [[JXGPSManager sharedInstance] requestTemporaryFullAccuracyOnceWith:@"key" completion:^(NSError *error) {
+                    NSLog(@"");
+                }];
+            } fail:^(JXGPSManagerAuthorizationStatus status) {
             }];
         }
             break;

@@ -12,8 +12,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef enum : NSUInteger {
     JXAuthorizationRequestCamera = 0,   // 相机
-    JXAuthorizationRequestPhotoLibraryAddOnly API_AVAILABLE(ios(14)), // 相册仅允许添加照片
-    JXAuthorizationRequestPhotoLibraryReadWrite, // 相册允许访问照片，limitedLevel 必须为 readWrite
     JXAuthorizationRequestAudio, // 麦克风
     JXAuthorizationRequestMediaLibrary, // 获取音乐媒体权限，iOS 9.3之后
     JXAuthorizationRequestContacts, // 通讯录
@@ -23,22 +21,17 @@ typedef enum : NSUInteger {
 } JXAuthorizationRequestType;
 
 typedef enum : NSUInteger {
-    JXAuthorizationStatusAuthorized = 0, // 完全的权限
-    JXAuthorizationStatusLimited API_AVAILABLE(ios(14)), // 有限的权限
-} JXAuthorizationSuccessType;
-
-typedef enum : NSUInteger {
     JXAuthorizationStatusNotDetermined = 0, // 用户第一次请求权限未授权
     JXAuthorizationStatusRestricted    = 1, // 家长控制之类的活动限制
     JXAuthorizationStatusDenied        = 2, // 用户明确拒绝
     JXAuthorizationFailNoneCamera      = 3, // 无摄像头
     JXAuthorizationFailRearUnavailable = 4, // 后方摄像头不可用
-} JXAuthorizationFailType;
+} JXAuthorizationFailStatus;
 
 // 权限获取成功
-typedef void(^requestAuthorizationSuccess)(JXAuthorizationSuccessType successType);
+typedef void(^requestAuthorizationSuccess)(void);
 // 权限获取失败
-typedef void(^requestAuthorizationFail)(JXAuthorizationFailType failType,NSError * _Nullable error);
+typedef void(^requestAuthorizationFail)(JXAuthorizationFailStatus failStatus,NSError * _Nullable error);
 
 @interface JXAuthorizationTool : NSObject
 

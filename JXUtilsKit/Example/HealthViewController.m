@@ -1,30 +1,28 @@
 //
-//  ViewController.m
+//  HealthViewController.m
 //  JXUtilsKit
 //
-//  Created by Barnett on 2020/3/25.
-//  Copyright © 2020 Barnett. All rights reserved.
+//  Created by Barnett on 2021/8/10.
+//  Copyright © 2021 Barnett. All rights reserved.
 //
 
-#import "ViewController.h"
-
-@interface ViewController ()
+#import "HealthViewController.h"
+#import "JXHealthTool.h"
+@interface HealthViewController ()
 <UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataArr;
-
 @end
 
-@implementation ViewController
+@implementation HealthViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.dataArr = @[@"AuthorizationViewController",
-                     @"SystemLockViewController",
-                     @"HealthViewController"];
+    self.dataArr = @[@"请求授权",
+                     @"获取步数"];
     [self.view addSubview:self.tableView];
 }
 
@@ -43,11 +41,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *name = self.dataArr[indexPath.row];
-    UIViewController *vc = [[NSClassFromString(name) alloc] init];
-    vc.view.backgroundColor = [UIColor whiteColor];
-    vc.navigationItem.title = name;
-    [self.navigationController pushViewController:vc animated:YES];
+    switch (indexPath.row) {
+        case 0:
+        {
+            HKObjectType *stepType = [HKObjectType quantityTypeForIdentifier:HKQuantityTypeIdentifierStepCount];
+            NSSet *healthSet = [NSSet setWithObjects:stepType, nil];
+            [[JXHealthTool sharedInstance] requestHealthAuthorizationWithShareTypes:nil readTypes:healthSet completion:^(JXHealthToolStatus status, NSSet * _Nonnull deniedShareSet, NSError * _Nonnull error) {
+            }];
+        }
+            break;
+        case 1:
+        {
+            [[JXHealthTool sharedInstance] getStepCount:^(double stepCount, NSError * _Nonnull error) {
+                NSLog(@"步数：%f --- 错误：%@",stepCount,error);
+            }];
+        }
+            break;
+        
+            break;
+        default:
+            break;
+    }
 }
 
 - (UITableView *)tableView
@@ -60,5 +74,6 @@
     }
     return _tableView;
 }
+
 
 @end

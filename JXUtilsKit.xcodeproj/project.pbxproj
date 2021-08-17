@@ -18,6 +18,10 @@
 		61636736242B506A009BC274 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 61636735242B506A009BC274 /* main.m */; };
 		61636740242B506A009BC274 /* JXUtilsKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163673F242B506A009BC274 /* JXUtilsKitTests.m */; };
 		6163674B242B506A009BC274 /* JXUtilsKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6163674A242B506A009BC274 /* JXUtilsKitUITests.m */; };
+		6179FFDF26C24B8300FF9775 /* JXHealthTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6179FFDE26C24B8300FF9775 /* JXHealthTool.m */; };
+		6179FFE326C254EF00FF9775 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6179FFE226C254EF00FF9775 /* HealthKit.framework */; };
+		6179FFE626C2621E00FF9775 /* HealthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6179FFE526C2621E00FF9775 /* HealthViewController.m */; };
+		6179FFE926C3D30400FF9775 /* JXPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6179FFE826C3D30400FF9775 /* JXPhotoManager.m */; };
 		61878E8425F78A5200C0E1CC /* AuthorizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878E8325F78A5200C0E1CC /* AuthorizationTests.m */; };
 		61878E9B25F7904C00C0E1CC /* UIKitUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878E9A25F7904C00C0E1CC /* UIKitUtilsTests.m */; };
 		61878EA325F8676A00C0E1CC /* FoundationUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878EA225F8676A00C0E1CC /* FoundationUtilsTests.m */; };
@@ -25,6 +29,9 @@
 		61878EAE25F86D1F00C0E1CC /* ThreadSafeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 61878EAD25F86D1F00C0E1CC /* ThreadSafeTests.m */; };
 		618B0BEC26B92ED1006740C2 /* AuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618B0BEA26B92ED1006740C2 /* AuthorizationViewController.m */; };
 		618B0BF026B92F8B006740C2 /* JXAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 618B0BEF26B92F8B006740C2 /* JXAuthorizationTool.m */; };
+		618B0BF326BB8805006740C2 /* JXGPSManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 618B0BF226BB8804006740C2 /* JXGPSManager.m */; };
+		618B0BFC26C0CD04006740C2 /* JXSystemLockTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 618B0BFB26C0CD04006740C2 /* JXSystemLockTool.m */; };
+		618B0BFF26C0D84C006740C2 /* SystemLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 618B0BFE26C0D84C006740C2 /* SystemLockViewController.m */; };
 		61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */; };
 		61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D42430AE2500682B5E /* JXSafeMutableArray.m */; };
 		61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */ = {isa = PBXBuildFile; fileRef = 61A871D82430AE5000682B5E /* JXByteConversion.m */; };
@@ -73,6 +80,14 @@
 		61636746242B506A009BC274 /* JXUtilsKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JXUtilsKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6163674A242B506A009BC274 /* JXUtilsKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXUtilsKitUITests.m; sourceTree = "<group>"; };
 		6163674C242B506A009BC274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6179FFDD26C24B8300FF9775 /* JXHealthTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXHealthTool.h; sourceTree = "<group>"; };
+		6179FFDE26C24B8300FF9775 /* JXHealthTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXHealthTool.m; sourceTree = "<group>"; };
+		6179FFE026C254EF00FF9775 /* JXUtilsKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JXUtilsKit.entitlements; sourceTree = "<group>"; };
+		6179FFE226C254EF00FF9775 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		6179FFE426C2621E00FF9775 /* HealthViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthViewController.h; sourceTree = "<group>"; };
+		6179FFE526C2621E00FF9775 /* HealthViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HealthViewController.m; sourceTree = "<group>"; };
+		6179FFE726C3D30400FF9775 /* JXPhotoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXPhotoManager.h; sourceTree = "<group>"; };
+		6179FFE826C3D30400FF9775 /* JXPhotoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXPhotoManager.m; sourceTree = "<group>"; };
 		61878E8325F78A5200C0E1CC /* AuthorizationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationTests.m; sourceTree = "<group>"; };
 		61878E9A25F7904C00C0E1CC /* UIKitUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIKitUtilsTests.m; sourceTree = "<group>"; };
 		61878EA225F8676A00C0E1CC /* FoundationUtilsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FoundationUtilsTests.m; sourceTree = "<group>"; };
@@ -82,6 +97,12 @@
 		618B0BEA26B92ED1006740C2 /* AuthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorizationViewController.m; sourceTree = "<group>"; };
 		618B0BEE26B92F8B006740C2 /* JXAuthorizationTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXAuthorizationTool.h; sourceTree = "<group>"; };
 		618B0BEF26B92F8B006740C2 /* JXAuthorizationTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXAuthorizationTool.m; sourceTree = "<group>"; };
+		618B0BF126BB8804006740C2 /* JXGPSManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXGPSManager.h; sourceTree = "<group>"; };
+		618B0BF226BB8804006740C2 /* JXGPSManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXGPSManager.m; sourceTree = "<group>"; };
+		618B0BFA26C0CD04006740C2 /* JXSystemLockTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JXSystemLockTool.h; sourceTree = "<group>"; };
+		618B0BFB26C0CD04006740C2 /* JXSystemLockTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JXSystemLockTool.m; sourceTree = "<group>"; };
+		618B0BFD26C0D84C006740C2 /* SystemLockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SystemLockViewController.h; sourceTree = "<group>"; };
+		618B0BFE26C0D84C006740C2 /* SystemLockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SystemLockViewController.m; sourceTree = "<group>"; };
 		61A871D12430AE2500682B5E /* JXSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableArray.h; sourceTree = "<group>"; };
 		61A871D22430AE2500682B5E /* JXSafeMutableDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JXSafeMutableDictionary.m; sourceTree = "<group>"; };
 		61A871D32430AE2500682B5E /* JXSafeMutableDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JXSafeMutableDictionary.h; sourceTree = "<group>"; };
@@ -98,6 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6179FFE326C254EF00FF9775 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +147,16 @@
 				618B0BEF26B92F8B006740C2 /* JXAuthorizationTool.m */,
 				61510EB8243F35CE00E55EB7 /* JXFoundationUtils.h */,
 				61510EB9243F35CE00E55EB7 /* JXFoundationUtils.m */,
+				618B0BF126BB8804006740C2 /* JXGPSManager.h */,
+				618B0BF226BB8804006740C2 /* JXGPSManager.m */,
+				6179FFDD26C24B8300FF9775 /* JXHealthTool.h */,
+				6179FFDE26C24B8300FF9775 /* JXHealthTool.m */,
 				61510ECF2440616D00E55EB7 /* JXParameterTool.h */,
 				61510ED02440616D00E55EB7 /* JXParameterTool.m */,
+				6179FFE726C3D30400FF9775 /* JXPhotoManager.h */,
+				6179FFE826C3D30400FF9775 /* JXPhotoManager.m */,
+				618B0BFA26C0CD04006740C2 /* JXSystemLockTool.h */,
+				618B0BFB26C0CD04006740C2 /* JXSystemLockTool.m */,
 				61510EB5243EFD0B00E55EB7 /* JXUIKitUtils.h */,
 				61510EB6243EFD0B00E55EB7 /* JXUIKitUtils.m */,
 			);
@@ -142,6 +172,7 @@
 				6163673E242B506A009BC274 /* JXUtilsKitTests */,
 				61636749242B506A009BC274 /* JXUtilsKitUITests */,
 				61636721242B5068009BC274 /* Products */,
+				6179FFE126C254EF00FF9775 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +189,7 @@
 		61636722242B5068009BC274 /* JXUtilsKit */ = {
 			isa = PBXGroup;
 			children = (
+				6179FFE026C254EF00FF9775 /* JXUtilsKit.entitlements */,
 				618B0BE826B92E82006740C2 /* Example */,
 				61A871DC2430AF8900682B5E /* JXUtilsKit.h */,
 				61510EB4243EF75800E55EB7 /* Tools */,
@@ -197,6 +229,14 @@
 			path = JXUtilsKitUITests;
 			sourceTree = "<group>";
 		};
+		6179FFE126C254EF00FF9775 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6179FFE226C254EF00FF9775 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		61878E8225F78A2E00C0E1CC /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +261,10 @@
 			children = (
 				618B0BE926B92ED1006740C2 /* AuthorizationViewController.h */,
 				618B0BEA26B92ED1006740C2 /* AuthorizationViewController.m */,
+				618B0BFD26C0D84C006740C2 /* SystemLockViewController.h */,
+				618B0BFE26C0D84C006740C2 /* SystemLockViewController.m */,
+				6179FFE426C2621E00FF9775 /* HealthViewController.h */,
+				6179FFE526C2621E00FF9775 /* HealthViewController.m */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -388,11 +432,17 @@
 				6163672B242B5068009BC274 /* ViewController.m in Sources */,
 				61636725242B5068009BC274 /* AppDelegate.m in Sources */,
 				61510EB7243EFD0B00E55EB7 /* JXUIKitUtils.m in Sources */,
+				618B0BFC26C0CD04006740C2 /* JXSystemLockTool.m in Sources */,
 				61636736242B506A009BC274 /* main.m in Sources */,
+				618B0BF326BB8805006740C2 /* JXGPSManager.m in Sources */,
+				6179FFE626C2621E00FF9775 /* HealthViewController.m in Sources */,
+				618B0BFF26C0D84C006740C2 /* SystemLockViewController.m in Sources */,
 				618B0BEC26B92ED1006740C2 /* AuthorizationViewController.m in Sources */,
 				61A871D62430AE2500682B5E /* JXSafeMutableArray.m in Sources */,
+				6179FFE926C3D30400FF9775 /* JXPhotoManager.m in Sources */,
 				61510ED12440616D00E55EB7 /* JXParameterTool.m in Sources */,
 				61510EBA243F35CE00E55EB7 /* JXFoundationUtils.m in Sources */,
+				6179FFDF26C24B8300FF9775 /* JXHealthTool.m in Sources */,
 				618B0BF026B92F8B006740C2 /* JXAuthorizationTool.m in Sources */,
 				61A871D52430AE2500682B5E /* JXSafeMutableDictionary.m in Sources */,
 				61A871D92430AE5000682B5E /* JXByteConversion.m in Sources */,
@@ -571,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JXUtilsKit/JXUtilsKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8RV92MFCF;
 				INFOPLIST_FILE = JXUtilsKit/Info.plist;
@@ -579,7 +630,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwbcg.JXUtilsKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barnett.JXUtilsKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -589,6 +640,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JXUtilsKit/JXUtilsKit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E8RV92MFCF;
 				INFOPLIST_FILE = JXUtilsKit/Info.plist;
@@ -597,7 +649,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.qwbcg.JXUtilsKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barnett.JXUtilsKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
