@@ -189,22 +189,22 @@
 		61636722242B5068009BC274 /* JXUtilsKit */ = {
 			isa = PBXGroup;
 			children = (
-				6179FFE026C254EF00FF9775 /* JXUtilsKit.entitlements */,
-				618B0BE826B92E82006740C2 /* Example */,
-				61A871DC2430AF8900682B5E /* JXUtilsKit.h */,
-				61510EB4243EF75800E55EB7 /* Tools */,
-				61A871CB2430AAE800682B5E /* Byte */,
-				61A871CA2430AAE100682B5E /* Marco */,
-				61A871C92430A9D600682B5E /* ThreadSafe */,
 				61636723242B5068009BC274 /* AppDelegate.h */,
 				61636724242B5068009BC274 /* AppDelegate.m */,
+				6163672F242B506A009BC274 /* Assets.xcassets */,
+				61A871CB2430AAE800682B5E /* Byte */,
+				618B0BE826B92E82006740C2 /* Example */,
+				61636734242B506A009BC274 /* Info.plist */,
+				6179FFE026C254EF00FF9775 /* JXUtilsKit.entitlements */,
+				61A871DC2430AF8900682B5E /* JXUtilsKit.h */,
+				61636731242B506A009BC274 /* LaunchScreen.storyboard */,
+				61636735242B506A009BC274 /* main.m */,
+				6163672C242B5068009BC274 /* Main.storyboard */,
+				61A871CA2430AAE100682B5E /* Marco */,
+				61A871C92430A9D600682B5E /* ThreadSafe */,
+				61510EB4243EF75800E55EB7 /* Tools */,
 				61636729242B5068009BC274 /* ViewController.h */,
 				6163672A242B5068009BC274 /* ViewController.m */,
-				6163672C242B5068009BC274 /* Main.storyboard */,
-				6163672F242B506A009BC274 /* Assets.xcassets */,
-				61636731242B506A009BC274 /* LaunchScreen.storyboard */,
-				61636734242B506A009BC274 /* Info.plist */,
-				61636735242B506A009BC274 /* main.m */,
 			);
 			path = JXUtilsKit;
 			sourceTree = "<group>";

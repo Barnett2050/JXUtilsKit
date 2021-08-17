@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JXUtilsKit'
-  s.version          = '0.1.4'
+  s.version          = '0.1.5'
   s.summary          = '工具类库'
   s.homepage         = 'https://github.com/Barnett2050/JXUtilsKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

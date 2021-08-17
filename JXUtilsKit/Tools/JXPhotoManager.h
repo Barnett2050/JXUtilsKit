@@ -108,7 +108,7 @@ typedef void(^saveFailCallBack)(NSError * _Nullable error);
 /// @param resultHandler 回调
 + (PHImageRequestID)requestAVAssetForVideo:(PHAsset *)asset options:(nullable PHVideoRequestOptions *)options resultHandler:(void (^)(AVAsset *__nullable asset, AVAudioMix *__nullable audioMix, NSDictionary *__nullable info))resultHandler;
 
-/// 获取asset
+/// 获取指定位置数量asset
 /// @param getType 类型
 /// @param range 数量
 /// @param completion 回调
