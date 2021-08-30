@@ -69,7 +69,7 @@
         case 1:
         {
             [JXPhotoManager requestAuthorizationType:JXPhotoManagerRequest_AddOnly completion:^(JXPhotoManagerAuthorizationStatus status) {
-                            
+                
             }];
         }
             break;
@@ -163,9 +163,13 @@
         case 11:
         {
             [[JXGPSManager sharedInstance] requestLocationServicesWith:JXGPSManagerRequestWhenInUse success:^{
-                [[JXGPSManager sharedInstance] requestTemporaryFullAccuracyOnceWith:@"key" completion:^(NSError *error) {
-                    NSLog(@"");
-                }];
+                if (@available(iOS 14.0, *)) {
+                    [[JXGPSManager sharedInstance] requestTemporaryFullAccuracyOnceWith:@"key" completion:^(NSError *error) {
+                        NSLog(@"");
+                    }];
+                } else {
+                    // Fallback on earlier versions
+                }
             } fail:^(JXGPSManagerAuthorizationStatus status) {
             }];
         }
