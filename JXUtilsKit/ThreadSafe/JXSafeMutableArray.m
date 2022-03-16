@@ -251,7 +251,7 @@
 #pragma mark - 增删改
 - (void)addObject:(id)anObject
 {
-    dispatch_barrier_sync(_concurrentQueue, ^{
+    dispatch_barrier_async(_concurrentQueue, ^{
         [self.safeArray addObject:anObject];
     });
 }
